@@ -1,4 +1,4 @@
-A51 MACRO ASSEMBLER  MAIN                                                                 05/17/2016 20:45:12 PAGE     1
+A51 MACRO ASSEMBLER  MAIN                                                                 05/17/2016 22:12:58 PAGE     1
 
 
 MACRO ASSEMBLER A51 V8.02c
@@ -15,7 +15,7 @@ LOC  OBJ            LINE     SOURCE
 0000 802E              5             jmp main
                        6     
 0003                   7     org 0003h
-0003 804D              8             jmp ISR_EX0  ;Interrupt Service Routine External 0
+0003 804B              8             jmp ISR_EX0  ;Interrupt Service Routine External 0
                        9             
 001B                  10     org 001Bh
 001B 8021             11             jmp ISR_TM1  ;Interrupt Service Routine Timer 1
@@ -49,66 +49,66 @@ LOC  OBJ            LINE     SOURCE
                       39     
                       40     ;Interrupt Service Routine Timer 1
 003E                  41     ISR_TM1:
-003E 0A               42                     inc r2 ;r2 kac tane 50ms oldugunu tutacak
-003F BA1408           43                     CJNE r2, #20, timer ;50ms'yi 20 kez calistirip 1sn elde edecegiz
-0042 7A00             44                     mov r2, #0
-                      45                     
-0044 E9               46                     mov a, r1 ;Jz komutu a'ya bakiyor diye.
-0045 6006             47                     JZ endIsr
-                      48                     
-0047 19               49                     dec r1;
-0048 7000             50                     JNZ timer
-                      51     
-004A                  52     timer: 
-004A 1166             53             call setTimer50ms
-004C 32               54             RETI
-                      55     
-004D                  56     endIsr:
-004D C293             57             clr P1.3 ;ledi söndür
-A51 MACRO ASSEMBLER  MAIN                                                                 05/17/2016 20:45:12 PAGE     2
+                      42                     
+003E E9               43                     mov a, r1 ;Jz komutu a'ya bakiyor diye.
+003F 600A             44                     JZ endIsr
+                      45             
+0041 0A               46                     inc r2 ;r2 kac tane 50ms oldugunu tutacak
+0042 BA1403           47                     CJNE r2, #20, timer ;50ms'yi 20 kez calistirip 1sn elde edecegiz.
+0045 7A00             48                     mov r2, #0
+                      49     
+0047 19               50                     dec r1
+0048                  51     timer: 
+0048 1165             52             call setTimer50ms
+004A 32               53             RETI
+                      54     
+004B                  55     endIsr:
+004B C293             56             clr P1.3 ;ledi söndür
+004D C28E             57             clr tr1 ;timer'i durdur
+A51 MACRO ASSEMBLER  MAIN                                                                 05/17/2016 22:12:58 PAGE     2
 
-004F C28E             58             clr tr1 ;timer'i durdur
-0051 32               59             RETI
-                      60     
-                      61     ;----------------------------------
+004F 32               58             RETI
+                      59     
+                      60     ;----------------------------------
+                      61     
                       62     
                       63     
-                      64     
-                      65     ;Interrupt Service Routine External 0'in handle edildigi yer
-0052                  66     ISR_EX0:
-0052 309007           67             JNB P1.0, sureArttir
-0055 309106           68             JNB P1.1, calistir
-0058 309208           69             JNB P1.2, durdur
-005B 32               70             RETI
-                      71     
-005C                  72             sureArttir:
-005C 09               73                     inc r1
-005D 32               74                     RETI ;interrup'i bitir
-                      75     
-005E                  76             calistir:
-005E D293             77                     SETB P1.3 ;calisinca ledi yak
-0060 1166             78                     call setTimer50ms
-0062 32               79                     RETI ;interrupt'i bitir
-0063                  80             durdur:
-0063 7900             81                     mov r1, #0
-0065 32               82                     RETI ;interrupt'i bitir
+                      64     ;Interrupt Service Routine External 0'in handle edildigi yer
+0050                  65     ISR_EX0:
+0050 309007           66             JNB P1.0, sureArttir
+0053 309106           67             JNB P1.1, calistir
+0056 309209           68             JNB P1.2, durdur
+0059 32               69             RETI
+                      70     
+005A                  71             sureArttir:
+005A 09               72                     inc r1
+005B 32               73                     RETI ;interrup'i bitir
+                      74     
+005C                  75             calistir:
+005C D293             76                     SETB P1.3 ;calisinca ledi yak
+005E 0A               77                     inc r2 ;timer interrupt'1 calistiginda 50ms bir kez calismis olacak
+005F 1165             78                     call setTimer50ms
+0061 32               79                     RETI ;interrupt'i bitir
+0062                  80             durdur:
+0062 7900             81                     mov r1, #0
+0064 32               82                     RETI ;interrupt'i bitir
                       83     ;---------------------------------------------------------------
                       84     
                       85     
                       86     ;timer
                       87     
-0066                  88     setTimer50ms:
-0066 758910           89             MOV TMOD, #00010000b
-0069 758D3A           90             MOV th1, #3ah
-006C 758BB1           91             mov tl1, #0b1h
+0065                  88     setTimer50ms:
+0065 758910           89             MOV TMOD, #00010000b
+0068 758D3A           90             MOV th1, #3ah
+006B 758BB1           91             mov tl1, #0b1h
                       92     
-006F D28E             93             setb tr1
+006E D28E             93             setb tr1
                       94     
-0071 22               95             RET
+0070 22               95             RET
                       96     ;-----------------------------------------------------------------
-0072                  97     finish:
+0071                  97     finish:
                       98             end
-A51 MACRO ASSEMBLER  MAIN                                                                 05/17/2016 20:45:12 PAGE     3
+A51 MACRO ASSEMBLER  MAIN                                                                 05/17/2016 22:12:58 PAGE     3
 
 SYMBOL TABLE LISTING
 ------ ----- -------
@@ -116,22 +116,22 @@ SYMBOL TABLE LISTING
 
 N A M E             T Y P E  V A L U E   ATTRIBUTES
 
-CALISTIR . . . . .  C ADDR   005EH   A   
-DURDUR . . . . . .  C ADDR   0063H   A   
+CALISTIR . . . . .  C ADDR   005CH   A   
+DURDUR . . . . . .  C ADDR   0062H   A   
 EA . . . . . . . .  B ADDR   00A8H.7 A   
-ENDISR . . . . . .  C ADDR   004DH   A   
+ENDISR . . . . . .  C ADDR   004BH   A   
 ET1. . . . . . . .  B ADDR   00A8H.3 A   
 EX0. . . . . . . .  B ADDR   00A8H.0 A   
-FINISH . . . . . .  C ADDR   0072H   A   
-ISR_EX0. . . . . .  C ADDR   0052H   A   
+FINISH . . . . . .  C ADDR   0071H   A   
+ISR_EX0. . . . . .  C ADDR   0050H   A   
 ISR_TM1. . . . . .  C ADDR   003EH   A   
 IT0. . . . . . . .  B ADDR   0088H.0 A   
 MAIN . . . . . . .  C ADDR   0030H   A   
 P1 . . . . . . . .  D ADDR   0090H   A   
-SETTIMER50MS . . .  C ADDR   0066H   A   
-SUREARTTIR . . . .  C ADDR   005CH   A   
+SETTIMER50MS . . .  C ADDR   0065H   A   
+SUREARTTIR . . . .  C ADDR   005AH   A   
 TH1. . . . . . . .  D ADDR   008DH   A   
-TIMER. . . . . . .  C ADDR   004AH   A   
+TIMER. . . . . . .  C ADDR   0048H   A   
 TL1. . . . . . . .  D ADDR   008BH   A   
 TMOD . . . . . . .  D ADDR   0089H   A   
 TR1. . . . . . . .  B ADDR   0088H.6 A   

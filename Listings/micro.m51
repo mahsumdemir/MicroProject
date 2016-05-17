@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22                                                        05/17/2016  20:45:13  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22                                                        05/17/2016  22:12:58  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
@@ -19,7 +19,7 @@ LINK MAP OF MODULE:  .\Objects\micro (MAIN)
             REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
-            CODE    0000H     0072H     ABSOLUTE     
+            CODE    0000H     0071H     ABSOLUTE     
 
 
 
@@ -29,22 +29,22 @@ SYMBOL TABLE OF MODULE:  .\Objects\micro (MAIN)
   ----------------------------------
 
   -------         MODULE        MAIN
-  C:005EH         SYMBOL        CALISTIR
-  C:0063H         SYMBOL        DURDUR
+  C:005CH         SYMBOL        CALISTIR
+  C:0062H         SYMBOL        DURDUR
   B:00A8H.7       SYMBOL        EA
-  C:004DH         SYMBOL        ENDISR
+  C:004BH         SYMBOL        ENDISR
   B:00A8H.3       SYMBOL        ET1
   B:00A8H.0       SYMBOL        EX0
-  C:0072H         SYMBOL        FINISH
-  C:0052H         SYMBOL        ISR_EX0
+  C:0071H         SYMBOL        FINISH
+  C:0050H         SYMBOL        ISR_EX0
   C:003EH         SYMBOL        ISR_TM1
   B:0088H.0       SYMBOL        IT0
   C:0030H         SYMBOL        MAIN
   D:0090H         SYMBOL        P1
-  C:0066H         SYMBOL        SETTIMER50MS
-  C:005CH         SYMBOL        SUREARTTIR
+  C:0065H         SYMBOL        SETTIMER50MS
+  C:005AH         SYMBOL        SUREARTTIR
   D:008DH         SYMBOL        TH1
-  C:004AH         SYMBOL        TIMER
+  C:0048H         SYMBOL        TIMER
   D:008BH         SYMBOL        TL1
   D:0089H         SYMBOL        TMOD
   B:0088H.6       SYMBOL        TR1
@@ -58,42 +58,42 @@ SYMBOL TABLE OF MODULE:  .\Objects\micro (MAIN)
   C:0038H         LINE#         25
   C:003AH         LINE#         26
   C:003CH         LINE#         37
-  C:003EH         LINE#         42
-BL51 BANKED LINKER/LOCATER V6.22                                                      05/17/2016  20:45:13  PAGE 2
+  C:003EH         LINE#         43
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/17/2016  22:12:58  PAGE 2
 
 
-  C:003FH         LINE#         43
-  C:0042H         LINE#         44
-  C:0044H         LINE#         46
-  C:0045H         LINE#         47
-  C:0047H         LINE#         49
-  C:0048H         LINE#         50
+  C:003FH         LINE#         44
+  C:0041H         LINE#         46
+  C:0042H         LINE#         47
+  C:0045H         LINE#         48
+  C:0047H         LINE#         50
+  C:0048H         LINE#         52
   C:004AH         LINE#         53
-  C:004CH         LINE#         54
+  C:004BH         LINE#         56
   C:004DH         LINE#         57
   C:004FH         LINE#         58
-  C:0051H         LINE#         59
-  C:0052H         LINE#         67
-  C:0055H         LINE#         68
-  C:0058H         LINE#         69
-  C:005BH         LINE#         70
-  C:005CH         LINE#         73
-  C:005DH         LINE#         74
+  C:0050H         LINE#         66
+  C:0053H         LINE#         67
+  C:0056H         LINE#         68
+  C:0059H         LINE#         69
+  C:005AH         LINE#         72
+  C:005BH         LINE#         73
+  C:005CH         LINE#         76
   C:005EH         LINE#         77
-  C:0060H         LINE#         78
-  C:0062H         LINE#         79
-  C:0063H         LINE#         81
-  C:0065H         LINE#         82
-  C:0066H         LINE#         89
-  C:0069H         LINE#         90
-  C:006CH         LINE#         91
-  C:006FH         LINE#         93
-  C:0071H         LINE#         95
+  C:005FH         LINE#         78
+  C:0061H         LINE#         79
+  C:0062H         LINE#         81
+  C:0064H         LINE#         82
+  C:0065H         LINE#         89
+  C:0068H         LINE#         90
+  C:006BH         LINE#         91
+  C:006EH         LINE#         93
+  C:0070H         LINE#         95
   -------         ENDMOD        MAIN
 
 ******************************************************************************
-* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0048H BYTE ( 3%) *
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0047H BYTE ( 3%) *
 ******************************************************************************
 
-Program Size: data=8.0 xdata=0 code=114
+Program Size: data=8.0 xdata=0 code=113
 LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

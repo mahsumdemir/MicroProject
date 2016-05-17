@@ -39,16 +39,15 @@ org 0030h
 
 ;Interrupt Service Routine Timer 1
 ISR_TM1:
-		inc r2 ;r2 kac tane 50ms oldugunu tutacak
-		CJNE r2, #20, timer ;50ms'yi 20 kez calistirip 1sn elde edecegiz
-		mov r2, #0
 		
 		mov a, r1 ;Jz komutu a'ya bakiyor diye.
 		JZ endIsr
-		
-		dec r1;
-		JNZ timer
+	
+		inc r2 ;r2 kac tane 50ms oldugunu tutacak
+		CJNE r2, #20, timer ;50ms'yi 20 kez calistirip 1sn elde edecegiz.
+		mov r2, #0
 
+		dec r1
 timer: 
 	call setTimer50ms
 	RETI
@@ -75,6 +74,7 @@ ISR_EX0:
 
 	calistir:
 		SETB P1.3 ;calisinca ledi yak
+		inc r2 ;timer interrupt'1 calistiginda 50ms bir kez calismis olacak
 		call setTimer50ms
 		RETI ;interrupt'i bitir
 	durdur:
