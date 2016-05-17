@@ -1,0 +1,99 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        05/17/2016  20:45:13  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\main.obj TO .\Objects\micro PRINT (.\Listings\micro.m51) RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+
+
+LINK MAP OF MODULE:  .\Objects\micro (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0072H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\micro (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:005EH         SYMBOL        CALISTIR
+  C:0063H         SYMBOL        DURDUR
+  B:00A8H.7       SYMBOL        EA
+  C:004DH         SYMBOL        ENDISR
+  B:00A8H.3       SYMBOL        ET1
+  B:00A8H.0       SYMBOL        EX0
+  C:0072H         SYMBOL        FINISH
+  C:0052H         SYMBOL        ISR_EX0
+  C:003EH         SYMBOL        ISR_TM1
+  B:0088H.0       SYMBOL        IT0
+  C:0030H         SYMBOL        MAIN
+  D:0090H         SYMBOL        P1
+  C:0066H         SYMBOL        SETTIMER50MS
+  C:005CH         SYMBOL        SUREARTTIR
+  D:008DH         SYMBOL        TH1
+  C:004AH         SYMBOL        TIMER
+  D:008BH         SYMBOL        TL1
+  D:0089H         SYMBOL        TMOD
+  B:0088H.6       SYMBOL        TR1
+  C:0000H         LINE#         5
+  C:0003H         LINE#         8
+  C:001BH         LINE#         11
+  C:0030H         LINE#         19
+  C:0032H         LINE#         20
+  C:0034H         LINE#         21
+  C:0036H         LINE#         23
+  C:0038H         LINE#         25
+  C:003AH         LINE#         26
+  C:003CH         LINE#         37
+  C:003EH         LINE#         42
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/17/2016  20:45:13  PAGE 2
+
+
+  C:003FH         LINE#         43
+  C:0042H         LINE#         44
+  C:0044H         LINE#         46
+  C:0045H         LINE#         47
+  C:0047H         LINE#         49
+  C:0048H         LINE#         50
+  C:004AH         LINE#         53
+  C:004CH         LINE#         54
+  C:004DH         LINE#         57
+  C:004FH         LINE#         58
+  C:0051H         LINE#         59
+  C:0052H         LINE#         67
+  C:0055H         LINE#         68
+  C:0058H         LINE#         69
+  C:005BH         LINE#         70
+  C:005CH         LINE#         73
+  C:005DH         LINE#         74
+  C:005EH         LINE#         77
+  C:0060H         LINE#         78
+  C:0062H         LINE#         79
+  C:0063H         LINE#         81
+  C:0065H         LINE#         82
+  C:0066H         LINE#         89
+  C:0069H         LINE#         90
+  C:006CH         LINE#         91
+  C:006FH         LINE#         93
+  C:0071H         LINE#         95
+  -------         ENDMOD        MAIN
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0048H BYTE ( 3%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=114
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
