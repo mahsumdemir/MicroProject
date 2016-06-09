@@ -25,14 +25,13 @@ org 0030h
 		clr P1.3; ledi sondur
 		mov r1, #0 ;sure
 		
-		;deneme
+		;test
 		;mov r1, #2
 		;clr P1.1
 		
+		;kodda butona basma.
 		;clr INT0
 		;setb INT0
-		
-		;
 		
 		JMP $ ;sonsuz dongu
 ;----------------------------------------
@@ -53,7 +52,7 @@ timer:
 	RETI
 
 endIsr:
-	clr P1.3 ;ledi söndür
+	clr P1.3 ;ledi sÃ¶ndÃ¼r
 	clr tr1 ;timer'i durdur
 	RETI
 
